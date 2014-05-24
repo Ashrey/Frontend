@@ -1,5 +1,10 @@
 # Ejemplo de Front-End
 
+##Probado en:
+* Chorme (Desktop y Mobile)
+* Mozilla (Desktop y Mobile)
+* Internet Explorer (Desktop) No funcionan las Transiciones
+
 ##Librerias usadas
 * JQuery. Manipulacion del DOM
 * Gmaps. Presentación de coordenadas con Google Maps
