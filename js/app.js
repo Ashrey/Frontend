@@ -1,8 +1,16 @@
 var App = {};
 
 App.render   = function(id, data){
-    var rendered = Handlebars.compile($(id).html());   // optional, speeds up future uses
+    var rendered = Handlebars.compile($(id).html()), 
+        anima = ['rotateIn', 'bounceInLeft', 'fadeInDownBig', 'rollIn', 'slideInDown',
+            'lightSpeedIn'],
+        item = anima[Math.floor(Math.random()*anima.length)];;   
     $('#output').html(rendered(data));
+    $('#output').addClass('animated '+item)
+    .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $(this).removeClass();
+    });
+
 }
 
 $(function(){
@@ -19,6 +27,7 @@ routie('', function() {
 
 routie('mapa/:id', function(e) {
     var row = _.findWhere(App.data, {id: parseInt(e)});
+    if(!row)return;
     App.render('#location', row);
     map = new GMaps({
         div: '#maps',
