@@ -14,11 +14,18 @@
             <div id="output"></div>
         </div>
         <script type="text/tpl" id="default">
-        <ul class="nav nav-tabs">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Messages</a></li>
-        </ul>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <label for="filter"><i class="glyphicon glyphicon-filter"></i></label>
+            <select class="form-control">
+            <option value="0">Todos</option>
+            <option value="1">Activos</option>
+            <option value="2">Inactivos</option>
+            </select>
+          </div>
+        </form>
+        
+        
         <div class="row">
         {{#each user}}
         
@@ -28,10 +35,12 @@
                         <h3 class="panel-title">{{name}}</h3>
                     </div>
                     <div class="panel-body"><img src="{{picture}}" alt="avatar" class="img-circle center-block"/>
-                        <div class="btn-group">
-                        <a href="#mapa/{{id}}" class="btn btn-success"> <i class="glyphicon glyphicon-globe"></i> Localización</a>
-                        <a href="#amigos/{{id}}" class="btn btn-primary"> <i class="glyphicon glyphicon-user"></i> Amigos</a>
+                        <div class="btn-group btn-group-justified ">
+                        <a href="#mapa/{{id}}" class="btn btn-success" title="Localización"> <i class="glyphicon glyphicon-globe"></i></a>
+                        <a href="#info/{{id}}" class="btn btn-info" title="Información"> <i class="glyphicon glyphicon-info-sign"></i></a>
+                        <a href="#amigos/{{id}}" class="btn btn-primary" title="Amigos"> <i class="glyphicon glyphicon-user"></i></a>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -55,6 +64,18 @@
               <li class="list-group-item">{{name}}</li>
               {{/each}}
             </ul>
+        </script>
+
+        <script type="text/tpl" id="info">
+            <h3>Información de {{name}}</h3>
+            <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i>Volver</a>
+            <dl>
+               <dt>Edad</dt><dd>{{age}}</dd>
+               <dt>Acerca de</dt><dd>{{about}}</dd>
+               <dt>Acerca de</dt><dd>{{address}}</dd>
+               <dt>Compañia</dt><dd>{{company}}</dd>
+               <dt>Balance</dt><dd>{{balance}} <i class="glyphicon glyphicon-usd"></i></dd>
+            </dl>
         </script>
 
 
