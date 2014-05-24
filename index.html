@@ -15,10 +15,10 @@
             <div id="output"></div>
         </div>
         <script type="text/tpl" id="default">
-        <ul class="nav nav-tabs">
-            <li><a href="#todos">Todos</a></li>
-            <li><a href="#activos">Activos</a></li>
-            <li><a href="#inactivos">Inactivos</a></li>
+        <ul class="nav nav-tabs nav-justified">
+            <li {{#if todos}}class="active"{{/if}}><a href="#todos">Todos</a></li>
+            <li {{#if act}}class="active"{{/if}}><a href="#activos">Activos</a></li>
+            <li {{#if ina}}class="active"{{/if}}><a href="#inactivos">Inactivos</a></li>
         </ul>
         
         <div class="row">

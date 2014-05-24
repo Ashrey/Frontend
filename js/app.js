@@ -27,18 +27,18 @@ $(function(){
 
 
 routie('todos', function() {
-    App.render('#default', {user: App.data}); 
+    App.render('#default', {user: App.data, todos: true}); 
 });
 
 
 routie('activos', function(e) {
     var list = _.filter(App.data, function(el){ return el.isActive; });
-    App.render('#default', {user: list });
+    App.render('#default', {user: list, act: true });
 });
 
 routie('inactivos', function(e) {
     var list = _.filter(App.data, function(el){ return !el.isActive; });
-    App.render('#default', {user: list });
+    App.render('#default', {user: list,  ina: true  });
 });
 
 
