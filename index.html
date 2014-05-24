@@ -27,7 +27,8 @@
                         <h3 class="panel-title">{{name}}</h3>
                     </div>
                     <div class="panel-body"><img src="{{picture}}" alt="avatar" class="img-circle center-block"/>
-                        <a href="#mapa/{{id}}" class="btn btn-info">Ver Localización</a>
+                        <a href="#mapa/{{id}}" class="btn btn-info">Localización</a>
+                        <a href="#amigos/{{id}}" class="btn btn-primary">Amigos</a>
                     </div>
                 </div>
             </div>
@@ -39,6 +40,15 @@
             Ubicación de {{name}}
             @{{latitude}},{{longitude}}
             <div id="maps"></div>
+            <a href="#" class="btn btn-primary">Volver a la lista</a>
+        </script>
+
+        <script type="text/tpl" id="friend">
+            <ul class="list-group">
+                {{#each friends}}
+              <li class="list-group-item">{{name}}</li>
+              {{/each}}
+            </ul>
             <a href="#" class="btn btn-primary">Volver a la lista</a>
         </script>
 
