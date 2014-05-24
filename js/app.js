@@ -2,8 +2,8 @@ var App = {};
 
 App.render   = function(id, data){
     var rendered = Handlebars.compile($(id).html()), 
-        anima = ['rotateIn', 'bounceInLeft', 'fadeInDownBig', 'rollIn', 'slideInDown',
-            'lightSpeedIn'],
+        anima = ['bounceInLeft', 'fadeInDownBig', 'slideInDown',
+            'lightSpeedIn', 'slideInUp'],
         item = anima[Math.floor(Math.random()*anima.length)];;   
     $('#output').html(rendered(data));
     $('#output').addClass('animated '+item)
@@ -17,7 +17,8 @@ App.getById = function(id){
 }
 
 $(function(){
-    console.info('loo');
+    var a = function(e){e.preventDefault();history.back();}
+    $('body').on('click', 'a.back', a);
     $.getJSON('data.json', function(data){
         App.data = data;
         routie('todos');
