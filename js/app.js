@@ -10,15 +10,18 @@ App.render   = function(id, data){
     .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
       $(this).removeClass();
     });
+}
 
+App.getById = function(id){
+   return _.findWhere(App.data, {id: parseInt(id)});
 }
 
 $(function(){
-    if(window.location.hash)
-        routie('');
+    if(window.location.hash) routie('');
 });
 
 routie('', function() {
+    /*Carga la data*/
     $.getJSON('data.json', function(data){
         App.data = data;
         App.render('#default', {user: App.data});
@@ -26,7 +29,7 @@ routie('', function() {
 });
 
 routie('mapa/:id', function(e) {
-    var row = _.findWhere(App.data, {id: parseInt(e)});
+    var row = App.getById(e);
     if(!row)return;
     App.render('#location', row);
     map = new GMaps({
@@ -40,6 +43,12 @@ routie('mapa/:id', function(e) {
 });
 
 routie('amigos/:id', function(e) {
-    var row = _.findWhere(App.data, {id: parseInt(e)});
+    var row = App.getById(e);
     App.render('#friend', row);
 });
+
+routie('info/:id', function(e) {
+    var row = App.getById(e);
+    App.render('#info', row);
+});
+
