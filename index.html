@@ -28,8 +28,10 @@
                         <h3 class="panel-title">{{name}}</h3>
                     </div>
                     <div class="panel-body"><img src="{{picture}}" alt="avatar" class="img-circle center-block"/>
-                        <a href="#mapa/{{id}}" class="btn btn-info">Localización</a>
-                        <a href="#amigos/{{id}}" class="btn btn-primary">Amigos</a>
+                        <div class="btn-group">
+                        <a href="#mapa/{{id}}" class="btn btn-success"> <i class="glyphicon glyphicon-globe"></i> Localización</a>
+                        <a href="#amigos/{{id}}" class="btn btn-primary"> <i class="glyphicon glyphicon-user"></i> Amigos</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -38,19 +40,21 @@
         </script>
 
         <script type="text/tpl" id="location">
-            Ubicación de {{name}}
-            @{{latitude}},{{longitude}}
+            <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i>Volver</a>
+            <h3>Ubicación de {{name}}</h3>
+            <i class="glyphicon glyphicon-globe"></i> @{{latitude}},{{longitude}}
             <div id="maps"></div>
-            <a href="#" class="btn btn-primary">Volver a la lista</a>
+            
         </script>
 
         <script type="text/tpl" id="friend">
+            <h3>Amigos de {{name}}</h3>
+        <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i>Volver</a>
             <ul class="list-group">
                 {{#each friends}}
               <li class="list-group-item">{{name}}</li>
               {{/each}}
             </ul>
-            <a href="#" class="btn btn-primary">Volver a la lista</a>
         </script>
 
 
