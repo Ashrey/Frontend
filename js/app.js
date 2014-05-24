@@ -1,3 +1,6 @@
+/**
+ * Copyright 2014 Alberto Berroteran
+ */
 /*Variable aplicación*/
 var App = {};
 
