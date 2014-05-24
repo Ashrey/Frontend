@@ -6,14 +6,15 @@ App.render   = function(id, data){
 }
 
 $(function(){
-    console.info('Default');
-    $.getJSON('data.json', function(data){
-        App.data = data;    
-    });
+    if(window.location.hash)
+        routie('');
 });
 
 routie('', function() {
-    App.render('#default', {user: App.data});
+    $.getJSON('data.json', function(data){
+        App.data = data;
+        App.render('#default', {user: App.data});
+    });
 });
 
 routie('mapa/:id', function(e) {
