@@ -14,7 +14,9 @@ Copyright 2014 Alberto Berroteran
     <body>
 
         <div class="container">
-            <h1>Usuarios de sistema</h1>
+            <div class="page-header">
+            <h1>Usuarios de sistema <small>Un ejemplo de Front-End</small></h1>
+            </div>
             <div id="output"></div>
         </div>
 
@@ -25,7 +27,7 @@ Copyright 2014 Alberto Berroteran
                 <li {{#if act}}class="active"{{/if}}><a href="#activos">Activos</a></li>
                 <li {{#if ina}}class="active"{{/if}}><a href="#inactivos">Inactivos</a></li>
             </ul>
-            
+            <br />
             <div class="row">
             {{#each user}}
                 <div class="col-xs-6 col-md-3">
