@@ -16,7 +16,7 @@
         </div>
         <script type="text/tpl" id="default">
         <ul class="nav nav-tabs">
-            <li><a href="#">Todos</a></li>
+            <li><a href="#todos">Todos</a></li>
             <li><a href="#activos">Activos</a></li>
             <li><a href="#inactivos">Inactivos</a></li>
         </ul>
@@ -44,7 +44,7 @@
         </script>
 
         <script type="text/tpl" id="location">
-            <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i>Volver</a>
+            <a href="#" class="btn btn-default back"><i class="glyphicon glyphicon-chevron-left"></i>Volver</a>
             <h3>Ubicación de {{name}}</h3>
             <i class="glyphicon glyphicon-globe"></i> @{{latitude}},{{longitude}}
             <div id="maps"></div>
@@ -53,7 +53,7 @@
 
         <script type="text/tpl" id="friend">
             <h3>Amigos de {{name}}</h3>
-        <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i>Volver</a>
+        <a href="#" class="btn btn-default back"><i class="glyphicon glyphicon-chevron-left"></i>Volver</a>
             <ul class="list-group">
                 {{#each friends}}
               <li class="list-group-item">{{name}}</li>
@@ -63,7 +63,7 @@
 
         <script type="text/tpl" id="info">
             <h3>Información de {{name}}</h3>
-            <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i>Volver</a>
+            <a href="#" class="btn btn-default back"><i class="glyphicon glyphicon-chevron-left"></i>Volver</a>
             <dl>
                <dt>Edad</dt><dd>{{age}}</dd>
                <dt>Acerca de</dt><dd>{{about}}</dd>
