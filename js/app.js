@@ -17,16 +17,29 @@ App.getById = function(id){
 }
 
 $(function(){
-    if(window.location.hash) routie('');
-});
-
-routie('', function() {
-    /*Carga la data*/
+    console.info('loo');
     $.getJSON('data.json', function(data){
         App.data = data;
-        App.render('#default', {user: App.data});
+        routie('todos');
     });
 });
+
+
+routie('todos', function() {
+    App.render('#default', {user: App.data}); 
+});
+
+
+routie('activos', function(e) {
+    var list = _.filter(App.data, function(el){ return el.isActive; });
+    App.render('#default', {user: list });
+});
+
+routie('inactivos', function(e) {
+    var list = _.filter(App.data, function(el){ return !el.isActive; });
+    App.render('#default', {user: list });
+});
+
 
 routie('mapa/:id', function(e) {
     var row = App.getById(e);
